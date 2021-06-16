@@ -2,7 +2,7 @@
 // Created by flori on 15.06.2021.
 //
 
-#include "../header/util.h"
+#include "util.h"
 #include <iostream>
 
 using namespace std;
