@@ -1,4 +1,4 @@
-#include "RadixSortStruct.h"
+#include "RadixSortPointer.h"
 
 int getMaxNumber(Person *data[], int size) {
 
