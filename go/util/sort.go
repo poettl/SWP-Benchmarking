@@ -5,6 +5,38 @@ import (
 	"encoding/binary"
 )
 
+func Bubblesort(items []int32) {
+	var (
+		n      = len(items)
+		sorted = false
+	)
+	for !sorted {
+		swapped := false
+		for i := 0; i < n-1; i++ {
+			if items[i] > items[i+1] {
+				items[i+1], items[i] = items[i], items[i+1]
+				swapped = true
+			}
+		}
+		if !swapped {
+			sorted = true
+		}
+		n = n - 1
+	}
+}
+
+func InsertionSort(arr []int32) {
+	len := len(arr)
+	for i := 1; i < len; i++ {
+		for j := 0; j < i; j++ {
+			if arr[j] > arr[i] {
+				arr[j], arr[i] = arr[i], arr[j]
+			}
+		}
+	}
+
+}
+
 const digit = 4
 const maxbit = -1 << 31
 
