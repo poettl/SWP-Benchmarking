@@ -5,7 +5,7 @@
 #ifndef SORTING_BUBBLESORTSTRUCTS_H
 #define SORTING_BUBBLESORTSTRUCTS_H
 
-#include "Person.h"
+#include "../../Person.h"
 
 void bubbleSortStructs(Person data[], int size);
 void swapStructs (Person* x, Person* y);

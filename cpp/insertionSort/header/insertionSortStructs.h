@@ -2,7 +2,7 @@
 // Created by flori on 16.06.2021.
 //
 
-#include "Person.h"
+#include "../../Person.h"
 
 #ifndef SORTING_INSERTIONSORTSTRUCTS_H
 #define SORTING_INSERTIONSORTSTRUCTS_H

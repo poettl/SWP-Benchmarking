@@ -2,7 +2,7 @@
 // Created by flori on 16.06.2021.
 //
 
-#include <xstring>
+#include <string>
 
 #ifndef SORTING_PERSON_H
 #define SORTING_PERSON_H
