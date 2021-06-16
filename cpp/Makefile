@@ -2,7 +2,7 @@ CC = g++
 CFLAGS = -Wall -g
 OUTDIR = bin/
 
-all: bubblesort insertionsort
+all: directories bubblesort insertionsort
 
 bubblesort: bubbleSortInts.o bubbleSortPointers.o bubbleSortStructs.o
 insertionsort: insertionSortInts.o insertionSortPointers.o insertionSortStructs.o
@@ -24,6 +24,10 @@ insertionSortPointers.o:
 
 insertionSortStructs.o:
 	$(CC) $(CFLAGS) -c insertionSort/source/insertionSortStructs.cpp -o $(OUTDIR)obj/insertionSortStructs.o
+
+directories:
+	mkdir -p $(OUTDIR)
+	mkdir -p $(OUTDIR)/obj/
 
 clean:
 	rm -rf bin/*
