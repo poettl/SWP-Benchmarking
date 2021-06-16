@@ -5,6 +5,6 @@
 #ifndef SORTING_BUBBLESORTPOINTERS_H
 #define SORTING_BUBBLESORTPOINTERS_H
 
-void bubbleSortPointers(int *data[], int size);
+void bubbleSort(int *data[], int size);
 
 #endif //SORTING_BUBBLESORTPOINTERS_H

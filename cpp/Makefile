@@ -3,11 +3,25 @@ CFLAGS = -Wall -g
 OUTDIR = bin/
 OUTDIR_OBJ = $(OUTDIR)obj/
 
-all: directories main
-	$(CC) $(CFLAGS) -o $(OUTDIR)program $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)main.o
+all: all_base all_pointers all_structs
 
-main: bubblesort insertionsort radixsort
-	$(CC) $(CFLAGS) -c main.cpp -o $(OUTDIR_OBJ)main.o
+all_base: directories base
+	$(CC) $(CFLAGS) -o $(OUTDIR)base-benchmark $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)base.o
+
+all_pointers: directories pointers
+		$(CC) $(CFLAGS) -o $(OUTDIR)pointer-benchmark $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)pointers.o
+
+all_structs: directories structs
+		$(CC) $(CFLAGS) -o $(OUTDIR)struct-benchmark $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)structs.o
+
+base: bubblesort insertionsort radixsort
+	$(CC) $(CFLAGS) -c benchmark/base.cpp -o $(OUTDIR_OBJ)base.o
+
+pointers: bubblesort insertionsort radixsort
+	$(CC) $(CFLAGS) -c benchmark/pointers.cpp -o $(OUTDIR_OBJ)pointers.o
+
+structs: bubblesort insertionsort radixsort
+	$(CC) $(CFLAGS) -c benchmark/structs.cpp -o $(OUTDIR_OBJ)structs.o
 
 bubblesort: bubbleSortInts.o bubbleSortPointers.o bubbleSortStructs.o
 insertionsort: insertionSortInts.o insertionSortPointers.o insertionSortStructs.o

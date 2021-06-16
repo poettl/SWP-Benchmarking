@@ -2,7 +2,7 @@
 #include "../header/bubbleSort.h"
 
 
-void bubbleSortPointers(int* data[], int size){
+void bubbleSort(int* data[], int size){
     int i, j;
     bool swapped;
 

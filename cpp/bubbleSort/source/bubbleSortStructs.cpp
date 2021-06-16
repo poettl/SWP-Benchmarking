@@ -9,7 +9,7 @@ void swapStructs(Person* x, Person*y){
     *y = temp;
 }
 
-void bubbleSortStructs(Person data[], int size) {
+void bubbleSort(Person data[], int size) {
     int i, j;
     bool swapped;
 

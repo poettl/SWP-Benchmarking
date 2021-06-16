@@ -4,7 +4,7 @@
 
 #include "../header/insertionSortStructs.h"
 
-void insertionSortStructs(struct Person data[], int size) {
+void insertionSort(struct Person data[], int size) {
     int i,j;
     struct Person key;
     for (i = 1; i < size; i++) {

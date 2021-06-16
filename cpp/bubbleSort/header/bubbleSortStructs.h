@@ -7,7 +7,7 @@
 
 #include "../../Person.h"
 
-void bubbleSortStructs(Person data[], int size);
+void bubbleSort(Person data[], int size);
 void swapStructs (Person* x, Person* y);
 
 #endif //SORTING_BUBBLESORTSTRUCTS_H

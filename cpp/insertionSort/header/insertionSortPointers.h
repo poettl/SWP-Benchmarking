@@ -5,7 +5,7 @@
 #ifndef SORTING_INSERTIONSORTPOINTERS_H
 #define SORTING_INSERTIONSORTPOINTERS_H
 
-void insertionSortPointers(int *data[], int size);
+void insertionSort(int *data[], int size);
 
 #endif //SORTING_INSERTIONSORTPOINTERS_H
 

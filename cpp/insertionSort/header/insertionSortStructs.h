@@ -7,6 +7,6 @@
 #ifndef SORTING_INSERTIONSORTSTRUCTS_H
 #define SORTING_INSERTIONSORTSTRUCTS_H
 
-void insertionSortStructs(struct Person data[], int size);
+void insertionSort(struct Person data[], int size);
 
 #endif //SORTING_INSERTIONSORTSTRUCTS_H

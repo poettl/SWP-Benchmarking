@@ -4,7 +4,7 @@
 
 #include "../header/insertionSortPointers.h"
 
-void insertionSortPointers(int *data[], int size) {
+void insertionSort(int *data[], int size) {
     int i, key, j;
     for (i = 1; i < size; i++) {
         key = *data[i];
