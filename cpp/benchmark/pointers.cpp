@@ -131,7 +131,7 @@ int main()
 		for (size_t i = 0; i < radixSortData.size(); ++i)
 			radixSortVector[i] = &radixSortData[i];
 		int **radixSortArr = &radixSortVector[0];
-		cout << "radix: " << *radixSortArr[0] << ", " << *radixSortArr[0] << endl;
+		cout << "radix: " << *radixSortArr[0] << ", " << *radixSortArr[1] << endl;
 
 		//run radix sort
 		const auto runStartRadix = clk::now();
