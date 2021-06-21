@@ -78,7 +78,7 @@ int main()
 	const auto programStartTime = clk::now();
 
 	// Our test data set
-	auto data = vector<Person>(personsInCache * 2);
+	auto data = vector<Person>(personsInCache * 5);
 
 	// Used for populating our data set each time before we run
 	random_device rd;
