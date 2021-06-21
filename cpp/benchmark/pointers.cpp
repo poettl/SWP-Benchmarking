@@ -103,7 +103,9 @@ int main()
 		clearCache();
 
 		vector<int*> bubbleSortVector = pointers;
+
 		int **bubbleSortArr = &bubbleSortVector[0];
+		cout << "bubble: " << *bubbleSortArr[0] << ", " << *bubbleSortArr[1] << endl;
 
 		// run bubble sort
 		const auto runStartBubble = clk::now();
@@ -112,6 +114,7 @@ int main()
 
 		vector<int*> insertionSortVector = pointers;
 		int **insertionSortArr = &insertionSortVector[0];
+		cout << "insertion: " << *insertionSortArr[0] << ", " << *insertionSortArr[1] << endl;
 
 		//run insertion sort
 		const auto runStartInsertion = clk::now();
@@ -120,6 +123,7 @@ int main()
 
 		vector<int*> radixSortVector = pointers;
 		int **radixSortArr = &radixSortVector[0];
+		cout << "radix: " << *radixSortArr[0] << ", " << *radixSortArr[0] << endl;
 
 		//run radix sort
 		const auto runStartRadix = clk::now();
