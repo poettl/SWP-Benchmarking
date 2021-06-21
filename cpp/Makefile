@@ -1,5 +1,5 @@
 CC = g++
-CFLAGS = -Wall -g
+CFLAGS = -Wall -g -std=c++14
 OUTDIR = bin/
 OUTDIR_OBJ = $(OUTDIR)obj/
 
