@@ -75,10 +75,9 @@ int main()
 	auto data = vector<int>(10000);
 
 	//pointer array
-	auto pointers = vector<int*>(data.size());
+	auto pointers = vector<int *>(data.size());
 	for (size_t i = 0; i < data.size(); ++i)
 		pointers[i] = &data[i];
-
 
 	// Used for populating our data set each time before we run
 	random_device rd;
@@ -102,7 +101,10 @@ int main()
 		populateDataSet(data, rng);
 		clearCache();
 
-		vector<int*> bubbleSortVector = pointers;
+		vector<int> bubbleSortData = data;
+		auto bubbleSortVector = vector<int *>(bubbleSortData.size());
+		for (size_t i = 0; i < bubbleSortData.size(); ++i)
+			bubbleSortVector[i] = &bubbleSortData[i];
 
 		int **bubbleSortArr = &bubbleSortVector[0];
 		cout << "bubble: " << *bubbleSortArr[0] << ", " << *bubbleSortArr[1] << endl;
@@ -112,7 +114,10 @@ int main()
 		bubbleSort(bubbleSortArr, data.size());
 		const auto runTimeBubble = clk::now() - runStartBubble;
 
-		vector<int*> insertionSortVector = pointers;
+		vector<int> insertionSortData = data;
+		auto insertionSortVector = vector<int *>(insertionSortData.size());
+		for (size_t i = 0; i < insertionSortData.size(); ++i)
+			insertionSortVector[i] = &insertionSortData[i];
 		int **insertionSortArr = &insertionSortVector[0];
 		cout << "insertion: " << *insertionSortArr[0] << ", " << *insertionSortArr[1] << endl;
 
@@ -121,7 +126,10 @@ int main()
 		insertionSort(insertionSortArr, data.size());
 		const auto runTimeInsertion = clk::now() - runStartInsertion;
 
-		vector<int*> radixSortVector = pointers;
+		vector<int> radixSortData = data;
+		auto radixSortVector = vector<int *>(radixSortData.size());
+		for (size_t i = 0; i < radixSortData.size(); ++i)
+			radixSortVector[i] = &radixSortData[i];
 		int **radixSortArr = &radixSortVector[0];
 		cout << "radix: " << *radixSortArr[0] << ", " << *radixSortArr[0] << endl;
 
@@ -147,7 +155,7 @@ int main()
 		 << " seconds (including bookkeeping and cache clearing)\n";
 
 	printResults(bubbleSortSum, iterations, "Bubble Sort");
-	printResults(insertionSortSum, iterations,  "Insertion Sort");
+	printResults(insertionSortSum, iterations, "Insertion Sort");
 	printResults(radixSortSum, iterations, "Radix Sort");
 	return 0;
 }
