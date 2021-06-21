@@ -107,7 +107,6 @@ int main()
 			bubbleSortVector[i] = &bubbleSortData[i];
 
 		int **bubbleSortArr = &bubbleSortVector[0];
-		cout << "bubble: " << *bubbleSortArr[0] << ", " << *bubbleSortArr[1] << endl;
 
 		// run bubble sort
 		const auto runStartBubble = clk::now();
@@ -119,7 +118,6 @@ int main()
 		for (size_t i = 0; i < insertionSortData.size(); ++i)
 			insertionSortVector[i] = &insertionSortData[i];
 		int **insertionSortArr = &insertionSortVector[0];
-		cout << "insertion: " << *insertionSortArr[0] << ", " << *insertionSortArr[1] << endl;
 
 		//run insertion sort
 		const auto runStartInsertion = clk::now();
@@ -131,7 +129,6 @@ int main()
 		for (size_t i = 0; i < radixSortData.size(); ++i)
 			radixSortVector[i] = &radixSortData[i];
 		int **radixSortArr = &radixSortVector[0];
-		cout << "radix: " << *radixSortArr[0] << ", " << *radixSortArr[1] << endl;
 
 		//run radix sort
 		const auto runStartRadix = clk::now();
