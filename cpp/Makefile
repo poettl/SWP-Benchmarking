@@ -3,7 +3,7 @@ CFLAGS = -Wall -g
 OUTDIR = bin/
 OUTDIR_OBJ = $(OUTDIR)obj/
 
-all: all_base all_pointers all_structs
+all: all_base all_pointers all_structs all_structs_cache
 
 all_base: directories base
 	$(CC) $(CFLAGS) -o $(OUTDIR)base-benchmark $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)base.o
@@ -14,6 +14,9 @@ all_pointers: directories pointers
 all_structs: directories structs
 		$(CC) $(CFLAGS) -o $(OUTDIR)struct-benchmark $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)structs.o
 
+all_structs_cache: directories structs_cache
+		$(CC) $(CFLAGS) -o $(OUTDIR)struct-cache-benchmark $(OUTDIR_OBJ)bubbleSortInts.o $(OUTDIR_OBJ)bubbleSortPointers.o $(OUTDIR_OBJ)bubbleSortStructs.o $(OUTDIR_OBJ)insertionSortInts.o $(OUTDIR_OBJ)insertionSortPointers.o $(OUTDIR_OBJ)insertionSortStructs.o $(OUTDIR_OBJ)radixSortInts.o $(OUTDIR_OBJ)radixSortPointers.o $(OUTDIR_OBJ)radixSortStructs.o $(OUTDIR_OBJ)structs_cache.o
+
 base: bubblesort insertionsort radixsort
 	$(CC) $(CFLAGS) -c benchmark/base.cpp -o $(OUTDIR_OBJ)base.o
 
@@ -22,6 +25,9 @@ pointers: bubblesort insertionsort radixsort
 
 structs: bubblesort insertionsort radixsort
 	$(CC) $(CFLAGS) -c benchmark/structs.cpp -o $(OUTDIR_OBJ)structs.o
+
+structs_cache: bubblesort insertionsort radixsort
+	$(CC) $(CFLAGS) -c benchmark/structs_cache.cpp -o $(OUTDIR_OBJ)structs_cache.o
 
 bubblesort: bubbleSortInts.o bubbleSortPointers.o bubbleSortStructs.o
 insertionsort: insertionSortInts.o insertionSortPointers.o insertionSortStructs.o

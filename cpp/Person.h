@@ -3,6 +3,7 @@
 //
 
 #include <string>
+#include<vector>
 
 #ifndef SORTING_PERSON_H
 #define SORTING_PERSON_H
@@ -13,11 +14,16 @@ struct Person{
     long height;
     long weight;
 
+    unsigned long long int array1[1023];
+
     Person& operator =(const Person& a){
         age = a.age;
         name = a.name;
         height = a.height;
         weight = a.weight;
+
+        std::copy(std::begin(a.array1), std::end(a.array1), std::begin(array1));
+
         return *this;
     }
 };
