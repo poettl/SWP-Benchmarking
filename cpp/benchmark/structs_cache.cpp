@@ -20,7 +20,7 @@ using namespace std::chrono;
 // Some constants we will use:
 
 // The cache size of your processor, in bytes. Adjust accordingly.
-const size_t cacheSize = 8 * 1024 * 1024; // 8 * kB * mB
+const size_t cacheSize = 1 * 1024 * 1024; // 8 * kB * mB
 
 // The number of integers that fit in the CPU cache,
 // which is useful for picking a sample set size.
